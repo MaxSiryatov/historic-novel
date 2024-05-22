@@ -1,24 +1,24 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 17, in script
-    unknown_character "Здравствуйте"
-Exception: Sayer 'unknown_character' is not defined.
+  File "game/script.rpy", line 161, in script
+    guard "Да, царь батюшка."
+Exception: Sayer 'guard' is not defined.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 17, in script
-    unknown_character "Здравствуйте"
+  File "game/script.rpy", line 161, in script
+    guard "Да, царь батюшка."
   File "D:\RenPy\renpy-8.2.1-sdk\renpy\ast.py", line 2557, in execute
     Say.execute(self)
   File "D:\RenPy\renpy-8.2.1-sdk\renpy\ast.py", line 575, in execute
     who = eval_who(self.who, self.who_fast)
   File "D:\RenPy\renpy-8.2.1-sdk\renpy\ast.py", line 464, in eval_who
     raise Exception("Sayer '%s' is not defined." % who)
-Exception: Sayer 'unknown_character' is not defined.
+Exception: Sayer 'guard' is not defined.
 
 Windows-10-10.0.22631 AMD64
 Ren'Py 8.2.1.24030407
 historic novel 1.0
-Tue Apr 23 22:22:51 2024
+Wed May 22 14:28:29 2024
