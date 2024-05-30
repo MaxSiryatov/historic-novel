@@ -253,14 +253,15 @@ screen quick_menu():
             xalign 0.5
             yalign 0.99
 
-            textbutton _("Back") action Rollback()
-            textbutton _("History") action ShowMenu('history')
-            textbutton _("Skip") action Skip() alternate Skip(fast=True, confirm=True)
-            textbutton _("Auto") action Preference("auto-forward", "toggle")
-            textbutton _("Save") action ShowMenu('save')
-            textbutton _("Q.Save") action QuickSave()
-            textbutton _("Q.Load") action QuickLoad()
-            textbutton _("Prefs") action ShowMenu('preferences')
+            textbutton _("Назад") action Rollback()
+            textbutton _("История") action ShowMenu('history')
+            textbutton _("Пропуск") action Skip() alternate Skip(fast=True, confirm=True)
+            textbutton _("Авто") action Preference("auto-forward", "toggle")
+            textbutton _("Сохранить") action ShowMenu('save')
+            textbutton _("Б.Сохр") action QuickSave()
+            textbutton _("Б.Загр") action QuickLoad()
+            textbutton _("Настройки") action ShowMenu('preferences')
+
 
 
 ## This code ensures that the quick_menu screen is displayed in-game, whenever
@@ -317,8 +318,8 @@ screen navigation():
             textbutton _("Preferences") action ShowMenu("preferences")
 
 
-            if main_menu:
-                textbutton _("Album") action ShowMenu("galleryA")
+            # if main_menu:
+            #     textbutton _("Album") action ShowMenu("galleryA")
 
 
             if _in_replay:
@@ -413,8 +414,8 @@ screen main_menu():
             textbutton _("Preferences") action ShowMenu("preferences")
 
 
-        if main_menu:
-            imagebutton auto "gui/main_menu/buttons/gallery_%s.png" xpos 820 ypos 569 focus_mask True action ShowMenu("galleryA")
+        # if main_menu:
+        #     imagebutton auto "gui/main_menu/buttons/gallery_%s.png" xpos 820 ypos 569 focus_mask True action ShowMenu("galleryA")
 
         if _in_replay:
 
@@ -424,18 +425,18 @@ screen main_menu():
 
             textbutton _("Main Menu") action MainMenu()
 
-        imagebutton auto "gui/main_menu/buttons/about_%s.png" xpos 820 ypos 626 focus_mask True action ShowMenu("about")
+        imagebutton auto "gui/main_menu/buttons/about_%s.png" xpos 820 ypos 569 focus_mask True action ShowMenu("about")
 
         if renpy.variant("pc") or (renpy.variant("web") and not renpy.variant("mobile")):
 
             ## Help isn't necessary or relevant to mobile devices.
-            imagebutton auto "gui/main_menu/buttons/help_%s.png" xpos 849 ypos 682 focus_mask True action ShowMenu("help")
+            imagebutton auto "gui/main_menu/buttons/help_%s.png" xpos 849 ypos 626 focus_mask True action ShowMenu("help")
 
         if renpy.variant("pc"):
 
             ## The quit button is banned on iOS and unnecessary on Android and
             ## Web.
-            imagebutton auto "gui/main_menu/buttons/quit_%s.png" xpos 849 ypos 738 focus_mask True action Quit(confirm=not main_menu)
+            imagebutton auto "gui/main_menu/buttons/quit_%s.png" xpos 849 ypos 682 focus_mask True action Quit(confirm=not main_menu)
 
     if gui.show_name:
 
@@ -794,15 +795,15 @@ screen preferences():
 
         ## DISPLAY
         hotspot (547, 275, 201, 59) action Preference('display', 'fullscreen')
-        hotspot (547, 347, 201, 53) action Preference('display', 'window')
+        hotspot (547, 347, 250, 53) action Preference('display', 'window')
 
         ## SKIP
-        hotspot (547, 504, 126, 54) action Preference('skip', 'seen')
-        hotspot (547, 574, 101, 54) action Preference('skip', 'all')
+        hotspot (547, 504, 250, 54) action Preference('skip', 'seen')
+        hotspot (547, 574, 290, 54) action Preference('skip', 'all')
 
         ## AFTER CHOICES
         hotspot (547, 718, 266, 59) action Preference('after choices', 'skip')
-        hotspot (547, 794, 129, 55) action Preference('after choices', 'stop')
+        hotspot (547, 794, 300, 55) action Preference('after choices', 'stop')
 
 
 
@@ -950,19 +951,19 @@ screen keyboard_help():
         xmaximum 450
         vbox:
             label _("Enter")
-            text _("Advances dialogue and activates the interface.")
+            text _("Расширить диалог и активировать интерфейс.")
         vbox:
             label _("Space")
-            text _("Advances dialogue without selecting choices.")
+            text _("Пропустить диалог, не выбирая вариантов.")
         vbox:
             label _("Escape")
-            text _("Accesses the game menu.")
+            text _("Выход в меню.")
         vbox:
             label _("Ctrl")
-            text _("Skips dialogue while held down.")
+            text _("Пропустить диалог, удерживая клавишу.")
         vbox:
             label _("Tab")
-            text _("Toggles dialogue skipping.")
+            text _("Переключить режим пропуска диалога.")
 
 
 
@@ -973,19 +974,19 @@ screen keyboard_help():
         xmaximum 450
         vbox:
             label _("Page Up")
-            text _("Rolls back to earlier dialogue.")
+            text _("Вернуться к предыдущему диалогу.")
         vbox:
             label _("Page Down")
-            text _("Rolls forward to later dialogue.")
+            text _("Перейти к следующему диалогу.")
         vbox:
             label "H"
-            text _("Hides the user interface.")
+            text _("Скрыть пользовательский интерфейс.")
         vbox:
             label "S"
-            text _("Takes a screenshot.")
+            text _("Сделать снимок экрана.")
         vbox:
             label "V"
-            text _("Toggles assistive {a=https://www.renpy.org/l/voicing}self-voicing{/a}.")
+            text _("Переключить режим {a=https://www.renpy.org/l/voicing}self-voicing{/a}.")
 
 
 screen mouse_help():
@@ -994,20 +995,20 @@ screen mouse_help():
         ypos 0.23
         xmaximum 450
         vbox:
-            label _("Left Click")
-            text _("Advances dialogue and activates the interface.")
+            label _("Левая кнопка мыши")
+            text _("Расширить диалог и активировать интерфейс.")
         vbox:
-            label _("Middle Click")
-            text _("Hides the user interface.")
+            label _("Средняя кнопка мыши")
+            text _("Скрыть пользовательский интефрейс.")
         vbox:
-            label _("Right Click")
-            text _("Accesses the game menu.")
+            label _("Правая кнопка мыши")
+            text _("Перейти в игровое меню")
         vbox:
-            label _("Mouse Wheel Up\nClick Rollback Side")
-            text _("Rolls back to earlier dialogue.")
+            label _("Колёсико мыши вверх")
+            text _("Вернуться к предыдущему диалогу.")
         vbox:
-            label _("Mouse Wheel Down")
-            text _("Rolls forward to later dialogue.")
+            label _("Колёсико мыши вниз")
+            text _("Перейти к следующему диалогу.")
 
 screen gamepad_help():
     vbox:
@@ -1016,19 +1017,19 @@ screen gamepad_help():
         xmaximum 450
         vbox:
             label _("Right Trigger\nA/Bottom Button")
-            text _("Advances dialogue and activates the interface.")
+            text _("Расширить диалог и активировать интерфейс.")
         vbox:
             label _("Left Trigger\nLeft Shoulder")
-            text _("Rolls back to earlier dialogue.")
+            text _("Вернуться к предыдущему диалогу.")
         vbox:
             label _("Right Shoulder")
-            text _("Rolls forward to later dialogue.")
+            text _("Перейти к следующему диалогу.")
         vbox:
             label _("D-Pad, Sticks")
-            text _("Navigate the interface.")
+            text _("Навигация по интерфейсу")
         vbox:
             label _("Start, Guide")
-            text _("Accesses the game menu.")
+            text _("Игровое меню")
 
 
 
@@ -1038,8 +1039,8 @@ screen gamepad_help():
         xmaximum 450
         vbox:
             label _("Y/Top Button")
-            text _("Hides the user interface.")
-        textbutton _("Calibrate") action GamepadCalibrate()
+            text _("Скрыть пользовательский интефрейс.")
+        textbutton _("Калибровка") action GamepadCalibrate()
 
 
 style about_label is gui_label

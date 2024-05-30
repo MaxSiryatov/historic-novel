@@ -30,6 +30,7 @@ define config.version = "1.0"
 ## Для отделения абзацев оставляйте между ними пустую строку.
 
 define gui.about = _p("""
+Историческая новелла.
 """)
 
 
@@ -120,7 +121,7 @@ define config.window_hide_transition = Dissolve(.2)
 ## в то время как любая другая цифра — это количество символов, печатаемых в
 ## секунду.
 
-default preferences.text_cps = 0
+default preferences.text_cps = 40
 
 
 ## Стандартная задержка авточтения. Большие значения означают долгие ожидания, а
