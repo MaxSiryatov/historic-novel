@@ -209,3 +209,7 @@ init python:
 ## разделённые дробью.
 
 # define build.itch_project = "renpytom/test-project"
+
+## Параметры функции "Пропуск"
+
+define config.skip_delay = 300

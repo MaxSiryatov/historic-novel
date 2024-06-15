@@ -30,10 +30,10 @@ define gui.idle_color = u'#ffffff'
 
 ## The small color is used for small text, which needs to be brighter/darker to
 ## achieve the same effect.
-define gui.idle_small_color = u'#887441'
+define gui.idle_small_color = u'#e4cc94'
 
 ## The color that is used for buttons and bars that are hovered.
-define gui.hover_color = u'#6b6528'
+define gui.hover_color = u'#ffffff'
 
 ## The color used for a text button when it is selected but not focused. A
 ## button is selected if it is the current screen or preference value.
@@ -202,7 +202,7 @@ define gui.quick_button_text_selected_color = gui.accent_color
 ##
 ## Choice buttons are used in the in-game menus.
 
-define gui.choice_button_width = 1185
+define gui.choice_button_width = 900
 define gui.choice_button_height = None
 define gui.choice_button_tile = False
 define gui.choice_button_borders = Borders(150, 8, 150, 8)

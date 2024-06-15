@@ -645,7 +645,7 @@ screen about():
         xmaximum 400
         text "[config.name!t]"
         text _("Version [config.version!t]\n")
-        text _("Made with {a=https://www.renpy.org/}Ren'Py{/a} [renpy.version_only].\n\n[renpy.license!t]")
+        text _("Made with {a=https://www.renpy.org/}Ren'Py{/a} [renpy.version_only].\n\nЭта программа содержит свободное и открытое ПО под несколькими лицензиями, включая MIT и GNU Lesser General Public. Полный список лицензий можно найти {a=https://www.renpy.org/doc/html/license.html}здесь{/a}.")
 
 
     vbox:
