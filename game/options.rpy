@@ -212,4 +212,4 @@ init python:
 
 ## Параметры функции "Пропуск"
 
-define config.skip_delay = 300
+define config.skip_delay = 10
