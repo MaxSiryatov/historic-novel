@@ -1,24 +1,34 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 161, in script
-    guard "Да, царь батюшка."
-Exception: Sayer 'guard' is not defined.
+  File "game/script.rpy", line 41, in script
+    play sound 1.1
+  File "renpy/common/000statements.rpy", line 301, in execute_play_sound
+    renpy.sound.play(_audio_eval(p["file"]),
+TypeError: 'float' object is not iterable
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 161, in script
-    guard "Да, царь батюшка."
-  File "D:\RenPy\renpy-8.2.1-sdk\renpy\ast.py", line 2557, in execute
-    Say.execute(self)
-  File "D:\RenPy\renpy-8.2.1-sdk\renpy\ast.py", line 575, in execute
-    who = eval_who(self.who, self.who_fast)
-  File "D:\RenPy\renpy-8.2.1-sdk\renpy\ast.py", line 464, in eval_who
-    raise Exception("Sayer '%s' is not defined." % who)
-Exception: Sayer 'guard' is not defined.
+  File "game/script.rpy", line 41, in script
+    play sound 1.1
+  File "D:\RenPy\renpy-8.2.1-sdk\renpy\ast.py", line 1968, in execute
+    self.call("execute")
+  File "D:\RenPy\renpy-8.2.1-sdk\renpy\ast.py", line 1950, in call
+    return renpy.statements.call(method, parsed, *args, **kwargs)
+  File "D:\RenPy\renpy-8.2.1-sdk\renpy\statements.py", line 349, in call
+    return method(parsed, *args, **kwargs)
+  File "renpy/common/000statements.rpy", line 301, in execute_play_sound
+    renpy.sound.play(_audio_eval(p["file"]),
+  File "D:\RenPy\renpy-8.2.1-sdk\renpy\audio\sound.py", line 36, in play
+    renpy.audio.music.play(filename,
+  File "D:\RenPy\renpy-8.2.1-sdk\renpy\audio\music.py", line 133, in play
+    c.enqueue(filenames, loop=loop, synchro_start=synchro_start, fadein=fadein, tight=tight, loop_only=loop_only, relative_volume=relative_volume)
+  File "D:\RenPy\renpy-8.2.1-sdk\renpy\audio\audio.py", line 675, in enqueue
+    for filename in filenames:
+TypeError: 'float' object is not iterable
 
 Windows-10-10.0.22631 AMD64
 Ren'Py 8.2.1.24030407
 historic novel 1.0
-Wed May 22 14:28:29 2024
+Wed Jul 10 13:32:45 2024

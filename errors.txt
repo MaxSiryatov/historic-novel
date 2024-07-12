@@ -2,9 +2,13 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 158: end of line expected.
-    vasiliy3 "Оба варианта имеют свои риски и свои выгоды. Упразднение вече — это решение "железной руки", но оно может вызвать бурю недовольства. Посещение городов с мирным посылом — это путь дипломатии и убеждения, но это может затянуть процесс и дать Пскову время организоваться."
-                                                                                           ^
+File "game/script.rpy", line 942: expected 'label_name' not found.
+    jump
+        ^
+
+File "game/script.rpy", line 944: expected 'label_name' not found.
+    jump
+        ^
 
 Ren'Py Version: Ren'Py 8.2.1.24030407
-Wed Apr 24 22:26:28 2024
+Fri Jul 12 13:02:57 2024

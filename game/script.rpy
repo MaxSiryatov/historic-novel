@@ -27,7 +27,9 @@ define boyar = Character('Боярин', color="#3c1f14")
 define vasiliy_shuisky = Character('Василий Шуйский', color="#3c1f14")
 define boyar_1 = Character('Боярин 1', color="#3c1f14")
 define boyar_2 = Character('Боярин 2', color="#3c1f14")
-define Maria_Nagaya = Character('Мария Нагая', color="#3c1f14")
+define mariya_nagaya = Character('Мария Нагая', color="#3c1f14")
+define conspirator = Character('Заговорщик', color="#3c1f14")
+define lshgedmitri = Character('Лжедмитрий', color="#3c1f14")
 
 #Определение музыки
 
@@ -38,37 +40,51 @@ define audio.gamemusic = "audio/teller-of-the-tales-by-kevin-macleod-from-filmmu
 label start:
 
     play music gamemusic
-
     scene storyteller_house with fade
-
+    play sound one_one
     storyteller "Здравствуй юный друг. Рад, что ты решил заглянуть к старику. Садись и послушай."
+    stop sound
+    play sound one_two
     storyteller "Вот так, уютно устроился? Вот и славно... Я с радостью поделюсь с тобой великой силой."
+    play sound one_three
     storyteller "У тебя есть вопрос, о какой силе может говорить этот ослабший старик? Хо-хо, о силе знаний, конечно. Ведь знания, они - как свет во мраке, как опора в бурю. Мир наш – сложная сетка переплетений, и в каждом узле этой сети живет кусочек прошлого."
+    stop sound
+    
     storyteller "И история – это своего рода карта. Карта, которая позволяет нам разгадывать загадки нашего прошлого, не повторять ошибок прошлого, и видеть пути, которые мы пройдем в будущем."
+    play sound one_four
     storyteller "Именно поэтому я хочу помочь тебе погрузится в историю, пусть и совсем немного…"
+    play sound one_five
     storyteller "Кхм… Думаю тебе понравится послушать про эпоху, когда наша Русь казалась склонной к разрыву. Я говорю про 16 век, про Смутное время."
     
     scene smuta with fade
     show storyteller at right
     
+    play sound one_six
     storyteller "Сму́та — период в истории России с 1598 по 1618 год, ознаменованный стихийными бедствиями, польско-шведской интервенцией, тяжелейшим государственно-политическим и социально-экономическим кризисом."
+    play sound one_seven
     storyteller "Ох и трудное тогда было время, власть то и дело менялась. Заговоры против царя почти стали обыденностью. Борьба в верхушке сказывалась на жизнях простых крестьян, да и вообще всего населения."
     
     scene pskov with fade
     show storyteller at right
 
+    play sound one_eight
     storyteller "Много интересных событий произошло в это время."
+    play sound one_nine
     storyteller "Так, например, к началу 16 века Псков — один из самых древних городов России, впервые упомянутый в «Повести временных лет» под 903 годом, фактически утратил свою независимость, но сохранял старые, вечевые порядки. Что такое вече?"
     
     scene veche with fade
     show storyteller at right
     
+    play sound one_ten
     storyteller "Вече — это всенародное собрание городских жителей, на котором они принимали решения по важным общественным вопросам, имело в основном законодательную функцию, но могло также принимать и приводить в действие судебные решения."
+    play sound one_eleven
     storyteller "Между тем большинство русских земель к тому времени уже было объединено Москвой и образовалось единое Русское государство. Вот новый великий князь Василий Третий и решил, что пришло время покончить с остатками самостоятельности Пскова."
     
     scene vasiliy3_bg with fade
     
+    play sound one_twelve
     storyteller "Васи́лий Третий Ива́нович - великий князь владимирский и московский в 1505—1533 годах, государь всея Руси. Сын Ивана Третьего Великого и отец Ивана Четвёртого Грозного." 
+    play sound one_thirteen
     storyteller "Василий Третий продолжил политику своего отца по “сбору” русских земель и постепенному упразднению удельных княжеств."
     
     scene ivan_mikhailovich with fade
@@ -773,22 +789,287 @@ label find_conspirators:
 
     scene court with fade
     window hide
-
+    scene tsar_room with fade
+    show false_dmitry1 at left
+    show boyar2 at right
     boyar_1 "Государь, суд приговорил Василия Шуйского к казни за измену и заговор против царя."
+    hide boyar2
+    show boyar3 at right
     boyar_2 "Царь батюшка, прежде чем приговор будет приведён в исполнение, я прошу вас выслушать нас. Мы собрались здесь, чтобы просить о помиловании для Василия Шуйского."
     boyar_2 "Несмотря на все его проступки, Василий Шуйский остаётся важной фигурой среди бояр. Его помилование может укрепить вашу репутацию и восстановить мир среди знати."
-    Maria_Nagaya "Ваше Величество, я прошу вас проявить милосердие."
-    Maria_Nagaya "Помните, что великие правители часто проявляли снисходительность к своим врагам, показывая тем самым свою мудрость и великодушие. В конце концов, Василий Шуйский может ещё сослужить вам службу."
+    hide boyar3
+    show mariya_nagaya at right
+    mariya_nagaya "Ваше Величество, я прошу вас проявить милосердие."
+    mariya_nagaya "Помните, что великие правители часто проявляли снисходительность к своим врагам, показывая тем самым свою мудрость и великодушие. В конце концов, Василий Шуйский может ещё сослужить вам службу."
+    show storyteller
     storyteller "Мария Нагая (около 1553 – после 1608) была последней женой Ивана IV Грозного и матерью царевича Дмитрия Ивановича. Происходила из знатного, но не очень влиятельного рода Нагих." 
     storyteller "Мария стала женой Ивана Грозного в 1581 году, а через год родила ему сына Дмитрия."
     storyteller "После смерти Бориса Годунова и прихода к власти Лжедмитрия I Мария Нагая признала в нём своего сына, что способствовало укреплению его легитимности."
+    hide storyteller
     dmitri_ivanovich "Вы говорите разумно. Однако, я должен обдумать все последствия. Если я помилую Шуйского, это может укрепить мой авторитет среди бояр. Но если он снова предаст меня..."
+    dmitri_ivanovich "Ладно, дайте мне время на размышления. Я приму решение завтра."
+    hide mariya_nagaya
+    show boyar3 at right
+    boyar_2 "Благодарим вас, государь. Мы надеемся, что ваше решение будет мудрым и справедливым."
+    hide boyar3
+    show mariya_nagaya at right
+    mariya_nagaya "Спасибо, Ваше Величество. Мы верим в ваше великодушие и мудрость."
+    dmitri_ivanovich "На этом совещание окончено!"
 
+    scene lonly_dmitry with fade
+    window hide
+
+    scene tsar_room with fade
+    show false_dmitry1
+    dmitri_ivanovich "Сложный выбор... Помиловать и рискнуть снова быть преданным, или казнить и навсегда избавиться от угрозы? Какую бы дорогу я ни выбрал, последствия будут значительными."
+
+    menu:
+        "Помиловать!":
+            jump pardon
+        "Казнить!":
+            jump execute
 
     return
+
+label pardon:
+
+    scene storyteller_house with fade
+    storyteller "Василий Шуйский помилован! Но близкая смерть не отпугнула его, и он готовит новый заговор!"
+    
+    scene tsar_room with fade
+    show false_dmitry1 at left
+    show boyar1 at right
+    boyar "Государь, слухи доходят, что поляки к нападению готовятся. Нам нужно усилить защиту!"
+    dmitri_ivanovich "Все войска привести в боевую готовность!"
+    scene sumatoha with fade
+    window hide
+    scene tsar_bedroom with fade
+    show false_dmitry1 at left
+    show vasiliy_shyiskiy at right
+    dmitri_ivanovich "Что здесь происходит? Шуйский, ты осмелился прийти ко мне с оружием?"
+    vasiliy_shuisky "Время твое, самозванец, вышло. Мы решили положить конец твоему правлению."
+
+    menu:
+        "Попытаться сбежать!":
+            jump try_to_escape
+        "Договориться с заговорщиками!":
+            jump negotiate_with_conspirators
+
+    return
+
+label try_to_escape:
+
+    scene tsar_bedroom with fade
+    show false_dmitry1 at left
+    show vasiliy_shyiskiy at right
+    lshgedmitri "Нет, вы не возьмёте меня так просто!"
+    vasiliy_shuisky "Он пытается бежать! Хватайте его!"
+
+    scene last_minutes with fade
+
+    storyteller "При падении наш самозванец сломал ногу и сбежать у него не получилось. Убили Лжедмитрия!"
+    storyteller "Изуродованный труп самозванца оставили на Лобном месте, привели Нагую, у которой в очередной раз спросили — ее это сын или нет. Она мастерски вывернулась, сказав:"
+
+    scene death_dmitriy with fade
+    show mariya_nagaya at right
+
+    mariya_nagaya "Теперь, какой есть, - конечно не мой."
+
+    scene storyteller_house with fade
+
+    storyteller "Тело Лжедмитрия сожгли, прах забили в пушку и выстрелили в сторону Польши. А Марина Мнишек бежала из Москвы."
+
+    jump final
+
+    return
+
+label negotiate_with_conspirators:
+
+    scene tsar_bedroom with fade
+    show false_dmitry1 at left
+    show vasiliy_shyiskiy at right
+
+    lshgedmitri "Шуйский, подумай! Я могу предложить тебе богатства, земли, власть! Только не убивай меня!"
+    vasiliy_shuisky "Не может быть никаких переговоров, самозванец. Ты обманул всех нас и незаконно захватил власть!"
+    lshgedmitri "Подумай о будущем, Шуйский! Я могу быть полезен тебе! Вместе мы можем править этой страной!"
+    vasiliy_shuisky "Слишком поздно. Твои дни сочтены!"
+
+    scene last_minutes with fade
+
+    storyteller "Лжедмитрий убит!"
+    storyteller "На самом же деле самозванец из окна прыгал, но не спасло его и это от смерти."
+
+    scene death_dmitriy with fade
+
+    storyteller "Изуродованный труп самозванца оставили на Лобном месте, привели Нагую, у которой в очередной раз спросили — ее это сын или нет. Она мастерски вывернулась, сказав:"
+
+    show mariya_nagaya at right
+
+    mariya_nagaya "Теперь, какой есть, - конечно не мой."
+
+    scene storyteller_house with fade
+
+    storyteller "Тело Лжедмитрия сожгли, прах забили в пушку и выстрелили в сторону Польши. А Марина Мнишек бежала из Москвы."
+
+    jump final
+
+    return
+
+label execute:
+
+    scene storyteller_house with fade
+
+    storyteller "Василий Шуйский казнён, но бояре всё также не могут принять лжецаря. Готовится второй заговор!"
+
+    scene tsar_room with fade
+    show false_dmitry1 at left
+    show boyar1 at right
+
+    boyar "Государь, слухи доходят, что поляки к нападению готовятся. Нам нужно усилить защиту!"
+    dmitri_ivanovich "Все войска привести в боевую готовность!"
+
+    scene sumatoha with fade
+    window hide
+    scene tsar_bedroom with fade
+    show false_dmitry1 at left
+    show consperator at right
+
+    dmitri_ivanovich "Что здесь происходит? Как вы смеете прийти ко мне с оружием!"
+    conspirator "Время твое, самозванец, вышло. Мы решили положить конец твоему правлению."
+
+    menu:
+        "Попытаться сбежать!":
+            jump try_to_escape_2
+        "Договориться с заговорщиками!":
+            jump negotiate_with_conspirators_2
+
+    return
+
+label try_to_escape_2:
+
+    scene tsar_bedroom with fade
+    show false_dmitry1 at left
+    show consperator at right
+    lshgedmitri "Нет, вы не возьмёте меня так просто!"
+    conspirator "Он пытается бежать! Хватайте его!"
+
+    scene last_minutes with fade
+
+    storyteller "При падении наш самозванец сломал ногу и сбежать у него не получилось. Убили Лжедмитрия!"
+    storyteller "Изуродованный труп самозванца оставили на Лобном месте, привели Нагую, у которой в очередной раз спросили — ее это сын или нет. Она мастерски вывернулась, сказав:"
+
+    scene death_dmitriy with fade
+    show mariya_nagaya at right
+
+    mariya_nagaya "Теперь, какой есть, - конечно не мой."
+
+    scene storyteller_house with fade
+
+    storyteller "Тело Лжедмитрия сожгли, прах забили в пушку и выстрелили в сторону Польши. А Марина Мнишек бежала из Москвы."
+    storyteller "Только вот в истории сделал это всё помилованный Лжедмитрием Василий Шуйский."
+
+    jump final
+
+    return
+
+label negotiate_with_conspirators_2:
+
+    scene tsar_bedroom with fade
+    show false_dmitry1 at left
+    show consperator at right
+
+    lshgedmitri "Подождите! Давайте поговорим. Я могу предложить вам богатства, земли, власть! Только не убивайте меня!"
+    conspirator "Мы пришли за твоей головой, а не за подарками, самозванец."
+    lshgedmitri "Подумайте о будущем! Я могу быть полезен вам! Вместе мы можем править этой страной!"
+    conspirator "(после паузы) Возможно, ты прав. Может, стоит дать тебе шанс. Но ты подпишешь договор с нами!"
+
+    scene dogovor with fade
+    window hide
+    scene tsar_bedroom with fade
+
+    lshgedmitri "Теперь мы можем работать вместе!"
+    conspirator "Ладно, мы уходим. Надеюсь, ты сдержишь своё слово."
+
+    scene ne_dogovor with fade
+    window hide
+    scene tsar_bedroom with fade
+    show false_dmitry1 
+
+    lshgedmitri "Стража! Схватить их и казнить немедленно!"
+
+    scene last_minutes with fade
+
+    storyteller "И кто знает, что было бы дальше, случись всё это на самом деле. Сейчас мы можем только догадываться."
+    storyteller "На самом же деле, Лжедмитрий помиловал Шуйского, но тот организовал второй заговор. Убили Лжедмитрия!"
+
+    scene death_dmitriy with fade
+
+    storyteller "Изуродованный труп самозванца оставили на Лобном месте, привели Нагую, у которой в очередной раз спросили — ее это сын или нет. Она мастерски вывернулась, сказав:"
+
+    scene death_dmitriy with fade
+    show mariya_nagaya at right
+
+    mariya_nagaya "Теперь, какой есть, - конечно не мой."
+
+    scene storyteller_house with fade
+
+    storyteller "Тело Лжедмитрия сожгли, прах забили в пушку и выстрелили в сторону Польши. А Марина Мнишек бежала из Москвы."
+    storyteller "Только вот в истории сделал это всё помилованный Лжедмитрием Василий Шуйский."
+
+    jump final
+
+    return
+
 
 label leave_alone:
     
-    
+    scene boyar_room with fade
+    show boyar1 at right
+    show false_dmitry1 at left
+    boyar "Как скажите, государь."
+
+    scene opana with fade
+    window hide
+    scene tsar_bedroom with fade
+    show false_dmitry1 at left
+    show vasiliy_shyiskiy at right
+
+    lshgedmitri "Что здесь происходит? Кто посмел войти ко мне без разрешения?"
+    vasiliy_shuisky "Твоё время вышло, самозванец. Мы пришли положить конец твоей лжи и узурпации."
+
+    scene shyiskiy with fade
+
+    storyteller "Василий Иванович Шуйский (1552–1612) был представителем древнего боярского рода Шуйских, происходившего от суздальских князей. Занимал видное место при дворе и был одним из ведущих оппозиционеров Бориса Годунова."
+
+    scene tsar_bedroom with fade
+    show false_dmitry1 at left
+    show vasiliy_shyiskiy at right
+
+    lshgedmitri "Шуйский, ты смеешь явиться ко мне с обвинениями? Помни, я царь всея Руси!"
+    vasiliy_shuisky "Ты никогда не был и не будешь настоящим царём. Ты обманул всех нас, взяв власть незаконно. Это конец, самозванец"
+    lshgedmitri "Шуйский, я могу быть полезен тебе! Вместе мы можем править этой страной!"
+    vasiliy_shuisky "Хватит слов. Твоё время вышло!"
+
+    scene last_minutes with fade
+
+    storyteller "Этот исход близок к истине, но всё было иначе. На самом деле самозванец пожил немного дольше."
+    storyteller "Он поверил слухам и поймал Шуйского, но поддавшись убеждениям, простил заговорщика, за что позже и поплатился! Убили Лжедмитрия!"
+
+    scene death_dmitriy with fade
+
+    storyteller "Изуродованный труп самозванца оставили на Лобном месте, привели Нагую, у которой в очередной раз спросили — ее это сын или нет. Она мастерски вывернулась, сказав:"
+
+    scene death_dmitriy with fade
+    show mariya_nagaya at right
+
+    mariya_nagaya "Теперь, какой есть, - конечно не мой."
+
+    scene storyteller_house with fade
+
+    storyteller "Тело Лжедмитрия сожгли, прах забили в пушку и выстрелили в сторону Польши. А Марина Мнишек бежала из Москвы."
+
+    jump final
 
     return
+
+
