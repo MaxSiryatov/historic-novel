@@ -2,13 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 942: expected 'label_name' not found.
-    jump
-        ^
-
-File "game/script.rpy", line 944: expected 'label_name' not found.
-    jump
-        ^
+File "game/script.rpy", line 277: expected end of line
+    play sound 2_1
+                ^
 
 Ren'Py Version: Ren'Py 8.2.1.24030407
-Fri Jul 12 13:02:57 2024
+Tue Jul 16 19:08:04 2024
